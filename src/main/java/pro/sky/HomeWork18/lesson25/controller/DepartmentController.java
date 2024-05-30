@@ -7,10 +7,12 @@ import pro.sky.HomeWork18.lesson25.model.Employee;
 import pro.sky.HomeWork18.lesson25.service.DepartmentService;
 import pro.sky.HomeWork18.lesson25.service.EmployeeService;
 import java.util.Collection;
+import java.util.List;
+import java.util.Map;
 
 
 @RestController
-@RequestMapping("/department")
+@RequestMapping("/departments")
 public class DepartmentController {
     private final DepartmentService departmentService;
 
@@ -18,8 +20,24 @@ public class DepartmentController {
     {
         this.departmentService = departmentService;
     }
+    @GetMapping("/max-salary")
+    public Employee findWithMaxSalary(@RequestParam Integer departmentId) {
+        return departmentService.findEmployeeWithMaxSalary(departmentId);
+    }
 
+    @GetMapping("/min-salary")
+    public Employee findWithMinSalary(@RequestParam Integer departmentId) {
+        return departmentService.findEmployeeWithMinSalary(departmentId);
+    }
 
+    @GetMapping("/all")
+    public Collection<Employee> GetAllEmployeesByDepartment(@RequestParam int departmentId) {
+        return departmentService.GetAllEmployeesByDepartment(departmentId);
+    }
+    @GetMapping("/allAll")
+    public Map<Integer, List<Employee>> AllEmployeesByDepartment() {
+        return departmentService.AllEmployeesByDepartment();
+    }
 
 
 }
