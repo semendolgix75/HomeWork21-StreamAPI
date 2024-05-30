@@ -6,5 +6,8 @@ import java.util.Collection;
 
 public interface DepartmentService {
 
-    Employee searchMaxSalaryDepartment(int department);
+
+    Employee findEmployeeWithMaxSalary(int departmentId);
+
+    Employee findEmployeeWithMinSalary(int departmentId);
 }
