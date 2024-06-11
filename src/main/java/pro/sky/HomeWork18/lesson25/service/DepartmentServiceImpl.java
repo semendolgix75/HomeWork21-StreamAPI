@@ -27,7 +27,6 @@ public class DepartmentServiceImpl implements DepartmentService {
                 .orElseThrow(RuntimeException::new);
     }
 
-
     @Override
     public Employee findEmployeeWithMinSalary(Integer departmentId) {
         return employeeService.findAll().stream()

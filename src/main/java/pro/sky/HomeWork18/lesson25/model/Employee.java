@@ -32,7 +32,6 @@ public class Employee {
     }
     public String getFullName(){
         return firstName +"  "+ lastName;}
-
     @Override
     public boolean equals(Object object) {
         if (this == object) return true;
